@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Description of DDA
  * classe de rasterização
@@ -7,17 +8,14 @@ require_once 'Pontos.php';
 
 class DDA
 {
-    function rasteriza($ini, $fim)
+    static function rasteriza($ini, $fim)
     {
         $pontos = array();
         $step;
-        
-        if(abs($fim->x - $ini->x) >= abs($fim->y - $ini->y))
-        {
+
+        if (abs($fim->x - $ini->x) >= abs($fim->y - $ini->y)) {
             $step = abs($fim->x - $ini->x);
-        }
-        else
-        {
+        } else {
             $step = abs($fim->y - $ini->y);
         }
 
@@ -26,8 +24,7 @@ class DDA
         $x      = $ini->x;
         $y      = $ini->y;
 
-        for($i = 0; $i < $step; $i++)
-        {
+        for ($i = 0; $i < $step; $i++) {
             $pontos[] = new Pontos(floor($x), floor($y));
             $x        += $deltax;
             $y        += $deltay;

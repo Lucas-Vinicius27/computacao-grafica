@@ -1,2 +1,2 @@
 # Computação Gráfica
-Exercícios de Rasterização e Sistema de mapeamento
+Exercícios de Rasterização e Sistema de mapeamento.
